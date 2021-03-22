@@ -2,7 +2,7 @@
 
 # ----- Project Macro ----- #
 UnitTestCategory := AllTests
-UnitTestName := MyAlgorithmTest
+UnitTestName := LeanElasticPeaksWorkspaceTest
 TestScript := test.py
 
 # ------------------------------------------------------ #
@@ -20,7 +20,7 @@ HOSTNAME  := $(shell hostname)
 BASEOPTS  := -GNinja -DENABLE_MANTIDPLOT=OFF -DCMAKE_INSTALL_PREFIX=$(INTALLDIR)
 
 # ----- GDB -----
-TestExecutable := $(BUILDDIR)/bin/AlgorithmsTest
+TestExecutable := $(BUILDDIR)/bin/DataObjectsTest
 
 # ----- BUILD OPTIONS -----
 ifneq (,$(findstring analysis,$(HOSTNAME)))
@@ -58,7 +58,7 @@ unittest:
 
 debugUnittest:
 	@echo "run unittest with gdb"
-	dgb --args $(TestExecutable) $(UnitTestName)
+	gdb --args $(TestExecutable) $(UnitTestName)
 
 docs:
 	@echo "build html docs"
