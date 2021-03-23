@@ -2,7 +2,7 @@
 
 # ----- Project Macro ----- #
 UnitTestCategory := AllTests
-UnitTestName := LeanElasticPeaksWorkspaceTest
+UnitTestName := LoadNexusProcessedTest
 TestScript := test.py
 
 # ------------------------------------------------------ #
@@ -35,7 +35,7 @@ else
 endif
 
 # ----- UNIT TEST -----
-UNTCMDS := ctest --output-on-failure -V -R $(UnitTestName)
+UNTCMDS := ctest --output-on-failure -R $(UnitTestName)
 
 # ----- Targets -----
 .PHONY: test qtest build unittest docs init list clean archive
